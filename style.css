@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap');
+body {
+  background-image: url('images/bg.jpeg');
+  background-repeat: repeat-x;
+  animation: slidein 100s linear infinite;
+  background-size: 4000px;
+}
+@keyframes slidein {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 250, 0.3);
+  border-radius: 3px;
+  z-index: 3;
+}
+.center h1 {
+  text-align: center;
+  font-size: 48px;
+  text-shadow: 5px 8px 10px #000000, 1px 1px 10px #ffffff;
+  color: white;
+  font-family: 'Lexend Zetta', sans-serif;
+}
+.center p {
+    color: white;
+    text-align: center;
+    margin-top: -2px;
+    font-size: 32px;
+    text-shadow: 1px 1px 10px #000000;
+    font-family: 'Nova Mono', monospace;
+    background: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #ee7752, #e73c7e, #23a6d5);
+    background-size: 400% 400%;
+    animation: animate 9s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+@keyframes animate {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+.texture {
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/overlay.svg');
+    z-index: 1;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 10), rgba(0, 0, 0, 0.2)), url('') no-repeat center center fixed;
+  background-size: cover;
+  z-index: 2;
+}
+.label {
+  list-style-type: none;
+}
+.icon {
+  display: inline-block;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul.label {
+  position: absolute;
+  bottom: 0;
+  justify-content: center;
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 90px; /* add some padding to the bottom */
+  padding-left: 45px;
+}
+li.icon {
+  margin-right: 70px;
+  width: 20px;
+  z-index: 3;
+}
+li.icon img {
+  width: 250%;
+  height: auto;
+  filter: drop-shadow(3px 5px 5px black);
+  z-index: 3;
+}
+li.icon img:hover {
+   transform: scale(1.4);
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  background-color: rgba(0,0,0,0);
+  z-index: 4;
+}
+.entries-container {
+  display: flex;
+  justify-content: center;
+}
+.entry {
+  margin-left: 40px;
+  color: darkslategrey;
+  text-shadow: 1px 1px 3px #ffffff;
+  margin-right: 50px;
+  font-family: 'Lexend Zetta', sans-serif;
+  z-index: 4;
+}
+.entry:hover {
+  color: white;
+  animation: shine 1s ease forwards;
+}
+@keyframes shine {
+  from { text-shadow: 0 0 0.1px #fff, 0 0 0.2px #fff, 0 0 0.3px #fff, 0 0 0.4px #fff, 0 0 0.5px #fff, 0 0 0.6px #fff, 0 0 0.7px #fff, 0 0 0.8px #fff, 0 0 0.9px #fff, 0 0 1px #fff; }
+  to { text-shadow: none; }
+}
+@media (max-width: 767px) {
+  body {
+    background-size: stretch;
+  }
+  .center h1 {
+    font-size: 42px;
+  }
+  .center p {
+    font-size: 25px;
+  }
+  .label {
+    margin-top: 40px;
+  }
+  li.icon {
+    margin-right: 60px;
+  }
+  li.icon img {
+    width: 200%;
+  }
+  footer {
+    font-size: 14px;
+  }
+  .entries-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .entry {
+    margin: 10px 0;
+  }
+}
+body.night-mode {
+  background-color: #111;
+  color: #fff;
+}
+#night-mode-btn {
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  filter: drop-shadow(1px 1px 4px black);
+      background: linear-gradient(45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #ee7752, #e73c7e, #23a6d5);
+    background-size: 400% 400%;
+    animation: animate 7s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+button {
+  z-index: 9999;
+}
+#mymodal {
+  z-index: 9999;
+}
+.modal-body {
+  z-index: 9999;
+}
+.modal-content {
+  z-index: 9999;
+}
+.modal {
+  z-index: 9999;
+}
+.btn-primary {
+  position: absolute;
+  bottom: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  background-color: transparent;
+  border-color: transparent;
+  color: white;
+  text-shadow: 1px 1px 3px #ffffff;
+  font-family: 'Lexend Zetta', sans-serif;
+  z-index: 9999;
+}
